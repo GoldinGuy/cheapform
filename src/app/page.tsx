@@ -6,9 +6,13 @@ import { ProgressBar } from "../components/ProgressBar";
 import { SharedStatesProvider } from "../../utils/shared_state";
 import { CheapForm } from "../components/Form";
 import JSONEditor from "@/components/JSONeditor";
+import defaultConfig from "../../utils/config";
+import { useState } from "react";
 
 export default function Form() {
 	const { percentComplete } = useQuestions();
+	const [CONFIG, setCONFIG] = useState(defaultConfig);
+
 	return (
 		<>
 			<header className="fixed top-0 left-0 right-0 overflow-hidden">
@@ -25,8 +29,8 @@ export default function Form() {
 				className={`flex flex-col items-center justify-center min-h-screen min-w-full antialiased font-sans`}
 			>
 				<SharedStatesProvider>
-					<CheapForm />
-					<JSONEditor />
+					<CheapForm config={CONFIG} />
+					<JSONEditor config={CONFIG} setConfig={setCONFIG} />
 				</SharedStatesProvider>
 			</main>
 		</>
