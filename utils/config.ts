@@ -1,7 +1,7 @@
 import { formConfig } from "../types/typings";
 
 const FORM_CONFIG: formConfig = {
-	total_questions: 10,
+	total_questions: 5,
 	questions: [
 		{
 			question: "Info",
@@ -22,17 +22,17 @@ const FORM_CONFIG: formConfig = {
 			type: "email",
 			required: true,
 		},
-		{
-			question: "You would be most hurt if a person called you...",
-			type: "select",
-			required: true,
-			answers: {
-				A: "Weak",
-				B: "Ignorant",
-				C: "Unkind",
-				D: "Boring",
-			},
-		},
+		// {
+		// 	question: "You would be most hurt if a person called you...",
+		// 	type: "select",
+		// 	required: true,
+		// 	answers: {
+		// 		A: "Weak",
+		// 		B: "Ignorant",
+		// 		C: "Unkind",
+		// 		D: "Boring",
+		// 	},
+		// },
 		{
 			question: "What material is at the core of your wand?",
 			type: "select",
@@ -60,54 +60,54 @@ const FORM_CONFIG: formConfig = {
 			},
 			required: true,
 		},
-		{
-			question:
-				"A skilled opponent fires an unknown spell at you; you shout...",
-			type: "select",
-			answers: {
-				A: "Expelliarmus!",
-				B: "Protego!",
-				C: "Stupefy!",
-				D: "Crucio!",
-			},
-			required: true,
-		},
-		{
-			question:
-				"A skilled opponent fires an unknown spell at you; you shout...",
-			type: "select",
-			answers: {
-				A: "Expelliarmus!",
-				B: "Protego!",
-				C: "Stupefy!",
-				D: "Crucio!",
-			},
-			required: true,
-		},
-		{
-			question:
-				"A skilled opponent fires an unknown spell at you; you shout...",
-			type: "select",
-			answers: {
-				A: "Expelliarmus!",
-				B: "Protego!",
-				C: "Stupefy!",
-				D: "Crucio!",
-			},
-			required: true,
-		},
-		{
-			question:
-				"A skilled opponent fires an unknown spell at you; you shout...",
-			type: "select",
-			answers: {
-				A: "Expelliarmus!",
-				B: "Protego!",
-				C: "Stupefy!",
-				D: "Crucio!",
-			},
-			required: true,
-		},
+		// {
+		// 	question:
+		// 		"A skilled opponent fires an unknown spell at you; you shout...",
+		// 	type: "select",
+		// 	answers: {
+		// 		A: "Expelliarmus!",
+		// 		B: "Protego!",
+		// 		C: "Stupefy!",
+		// 		D: "Crucio!",
+		// 	},
+		// 	required: true,
+		// },
+		// {
+		// 	question:
+		// 		"A skilled opponent fires an unknown spell at you; you shout...",
+		// 	type: "select",
+		// 	answers: {
+		// 		A: "Expelliarmus!",
+		// 		B: "Protego!",
+		// 		C: "Stupefy!",
+		// 		D: "Crucio!",
+		// 	},
+		// 	required: true,
+		// },
+		// {
+		// 	question:
+		// 		"A skilled opponent fires an unknown spell at you; you shout...",
+		// 	type: "select",
+		// 	answers: {
+		// 		A: "Expelliarmus!",
+		// 		B: "Protego!",
+		// 		C: "Stupefy!",
+		// 		D: "Crucio!",
+		// 	},
+		// 	required: true,
+		// },
+		// {
+		// 	question:
+		// 		"A skilled opponent fires an unknown spell at you; you shout...",
+		// 	type: "select",
+		// 	answers: {
+		// 		A: "Expelliarmus!",
+		// 		B: "Protego!",
+		// 		C: "Stupefy!",
+		// 		D: "Crucio!",
+		// 	},
+		// 	required: true,
+		// },
 	],
 };
 export default FORM_CONFIG;

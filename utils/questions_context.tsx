@@ -35,7 +35,7 @@ export function QuestionsProvider({ children }: QuestionsProviderType) {
 			if (firstName) answered += 1;
 			if (lastName) answered += 1;
 			if (email) answered += 1;
-			if (dropdown) answered += 1;
+			// if (dropdown) answered += 1;
 			if (select) answered += 1;
 			if (multiselect.length !== 0) answered += 1;
 

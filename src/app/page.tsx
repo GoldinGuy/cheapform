@@ -5,6 +5,7 @@ import { useQuestions } from "../../utils/questions_context";
 import { ProgressBar } from "../components/ProgressBar";
 import { SharedStatesProvider } from "../../utils/shared_state";
 import { CheapForm } from "../components/Form";
+import JSONEditor from "@/components/JSONeditor";
 
 export default function Form() {
 	const { percentComplete } = useQuestions();
@@ -25,6 +26,7 @@ export default function Form() {
 			>
 				<SharedStatesProvider>
 					<CheapForm />
+					<JSONEditor />
 				</SharedStatesProvider>
 			</main>
 		</>

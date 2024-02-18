@@ -19,7 +19,7 @@ export function QuestionHeading({ children, className }: QuestionHeadingProps) {
 	return (
 		<h1
 			className={classNames(
-				"text-btn-text-color font-semibold text-5xl",
+				"text-btn-text-color font-semibold text-4xl md:text-5xl",
 				className
 			)}
 		>
@@ -34,7 +34,7 @@ type QuestionParagraphProps = {
 
 export function QuestionParagraph({ children }: QuestionParagraphProps) {
 	return (
-		<p className="text-para-text-color font-normal text-4xl leading-snug mt-3">
+		<p className="text-para-text-color font-normal text-2xl sm:text-3xl md:text-4xl leading-snug mt-3">
 			{children}
 		</p>
 	);

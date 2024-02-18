@@ -41,7 +41,7 @@ export function QuestionButton({
 		>
 			<button
 				onClick={onClick}
-				className={`bg-yellow-500 border border-transparent rounded text-btn-text-color cursor-pointer text-2xl font-bold py-2.5 px-4 hover:bg-primary-light-color active:bg-yellow-600 focus:outline-none flex justify-between items-center`}
+				className={`bg-yellow-500 border border-transparent rounded text-btn-text-color cursor-pointer text-xl md:text-2xl font-bold py-2.5 px-4 hover:bg-primary-light-color active:bg-yellow-600 focus:outline-none flex justify-between items-center`}
 			>
 				{children}
 				<LuCheck className="ml-2" />
