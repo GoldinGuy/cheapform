@@ -3,7 +3,7 @@ import { ChangeEventHandler } from "react";
 import { SET_LAST_NAME } from "../../../reducers";
 import { useQuestions } from "../../../utils/questions_context";
 import { useSharedStates } from "../../../utils/shared_state";
-import { BtnContainer } from "../form_parts/Btn";
+import { QuestionButton } from "../form_parts/Btn";
 import {
 	QuestionNumHeading,
 	QuestionInputText,
@@ -43,13 +43,13 @@ export function LastName() {
 			{errorMsg && <Error message={errorMsg} />}
 
 			{errorMsg === "" && (
-				<BtnContainer
+				<QuestionButton
 					showEnter={true}
 					className={classNames("btn-container")}
 					onClick={handleOkClick}
 				>
 					OK
-				</BtnContainer>
+				</QuestionButton>
 			)}
 		</>
 	);

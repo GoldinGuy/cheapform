@@ -1,8 +1,8 @@
 import classNames from "classnames";
 import { QuestionProps } from "../../../types/typings";
 import { useSharedStates } from "../../../utils/shared_state";
-import { BtnContainer } from "./Btn";
-import { QuestionBoxHeading, QuestionBoxPara } from "./QuestionParts";
+import { QuestionButton } from "./Btn";
+import { QuestionHeading, QuestionParagraph } from "./QuestionParts";
 import { LuCheckCircle, LuCheckCircle2 } from "react-icons/lu";
 import { FirstName } from "../question_types/FirstName";
 import { LastName } from "../question_types/LastName";
@@ -45,20 +45,17 @@ export function Intro() {
 
 	return (
 		<>
-			<QuestionBoxHeading className="flex justify-between items-center">
-				Welcome to CheapForm <LuCheckCircle />
-			</QuestionBoxHeading>
-			<QuestionBoxPara>
-				To get started, we need to know a few things about you.
+			<QuestionHeading className="flex justify-between items-center">
+				Welcome to CheapForm <LuCheckCircle2 />
+			</QuestionHeading>
+			<QuestionParagraph>
+				Are you ready to explore the best way to build forms?
 				<br />
-				<br />
-				Do you
-				<br />- dogs or cats?
-				<br />- coffee or boba?
-			</QuestionBoxPara>
-			<BtnContainer showEnter={true} onClick={handleOkClick}>
+				Then click below!
+			</QuestionParagraph>
+			<QuestionButton showEnter={true} onClick={handleOkClick}>
 				Start
-			</BtnContainer>
+			</QuestionButton>
 		</>
 	);
 }

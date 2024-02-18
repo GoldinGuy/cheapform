@@ -10,19 +10,16 @@ import classNames from "classnames";
 // import { questrialFont } from "../../utils/questrial";
 import { LuArrowRight, LuHash, LuNut } from "react-icons/lu";
 
-type QuestionBoxHeadingProps = {
+type QuestionHeadingProps = {
 	readonly children: ReactNode;
 	readonly className?: string;
 };
 
-export function QuestionBoxHeading({
-	children,
-	className,
-}: QuestionBoxHeadingProps) {
+export function QuestionHeading({ children, className }: QuestionHeadingProps) {
 	return (
 		<h1
 			className={classNames(
-				"text-btn-text-color font-normal text-5xl",
+				"text-btn-text-color font-semibold text-5xl",
 				className
 			)}
 		>
@@ -31,11 +28,11 @@ export function QuestionBoxHeading({
 	);
 }
 
-type QuestionBoxParaProps = {
+type QuestionParagraphProps = {
 	readonly children: ReactNode;
 };
 
-export function QuestionBoxPara({ children }: QuestionBoxParaProps) {
+export function QuestionParagraph({ children }: QuestionParagraphProps) {
 	return (
 		<p className="text-para-text-color font-normal text-4xl leading-snug mt-3">
 			{children}
@@ -53,7 +50,7 @@ export function QuestionNumHeading({
 	questionNum,
 }: QuestionNumHeadingProps) {
 	return (
-		<QuestionBoxHeading className="relative">
+		<QuestionHeading className="relative">
 			<span
 				className="absolute text-lg -ml-9 mt-1.5 flex justify-center items-center"
 				style={{ fontSize: "16px", marginLeft: "-36px", marginTop: "5px" }}
@@ -63,7 +60,7 @@ export function QuestionNumHeading({
 				{/* <LuArrowRight className="mb-[-3px]" width={16} height={16} /> */}
 			</span>
 			{children}
-		</QuestionBoxHeading>
+		</QuestionHeading>
 	);
 }
 

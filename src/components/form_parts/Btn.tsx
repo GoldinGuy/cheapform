@@ -2,19 +2,19 @@ import classNames from "classnames";
 import { MouseEventHandler, ReactNode, useEffect, useState } from "react";
 import { LuCheck } from "react-icons/lu";
 
-type BtnContainerProps = {
+type QuestionButtonProps = {
 	readonly children: ReactNode;
 	readonly className?: string;
 	readonly onClick?: MouseEventHandler;
 	readonly showEnter?: boolean;
 };
 
-export function BtnContainer({
+export function QuestionButton({
 	children,
 	className,
 	showEnter,
 	onClick,
-}: BtnContainerProps) {
+}: QuestionButtonProps) {
 	const [isOnMobile, setIsOnMobile] = useState(false);
 
 	useEffect(() => {
@@ -41,7 +41,7 @@ export function BtnContainer({
 		>
 			<button
 				onClick={onClick}
-				className={`bg-teal-500 border border-transparent rounded text-btn-text-color cursor-pointer text-2xl font-bold py-2.5 px-4 hover:bg-primary-light-color active:bg-teal-700 focus:outline-none flex justify-between items-center`}
+				className={`bg-yellow-500 border border-transparent rounded text-btn-text-color cursor-pointer text-2xl font-bold py-2.5 px-4 hover:bg-primary-light-color active:bg-yellow-600 focus:outline-none flex justify-between items-center`}
 			>
 				{children}
 				<LuCheck className="ml-2" />

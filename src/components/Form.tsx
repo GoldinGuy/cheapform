@@ -25,7 +25,7 @@ export function CheapForm() {
 	}, []);
 
 	return (
-		<section className="max-w-screen-md">
+		<section className="mx-3 max-w-screen-sm md:max-w-screen-md">
 			<div>
 				<Question
 					type="intro"

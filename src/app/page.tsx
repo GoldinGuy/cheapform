@@ -15,8 +15,8 @@ export default function Form() {
 				<Image
 					src="/cheapform_logo.png"
 					alt="Cheapform logo"
-					width={96}
-					height={24}
+					width={150}
+					height={30}
 					className="animate-slide-up m-4" // Custom animation class
 				/>
 			</header>
