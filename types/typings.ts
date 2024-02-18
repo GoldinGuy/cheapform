@@ -13,7 +13,7 @@ export type QuestionProps = {
 		| "lastName"
 		| "dropdown"
 		| "select"
-		| "goal"
+		| "multiselect"
 		| "email";
 };
 

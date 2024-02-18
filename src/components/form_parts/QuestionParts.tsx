@@ -7,8 +7,8 @@ import {
 	useRef,
 } from "react";
 import classNames from "classnames";
-import { questrialFont } from "../../utils/questrial";
-import { LuArrowRight } from "react-icons/lu";
+// import { questrialFont } from "../../utils/questrial";
+import { LuArrowRight, LuHash, LuNut } from "react-icons/lu";
 
 type QuestionBoxHeadingProps = {
 	readonly children: ReactNode;
@@ -55,18 +55,12 @@ export function QuestionNumHeading({
 	return (
 		<QuestionBoxHeading className="relative">
 			<span
-				className="absolute text-lg -ml-9 mt-1.5"
+				className="absolute text-lg -ml-9 mt-1.5 flex justify-center items-center"
 				style={{ fontSize: "16px", marginLeft: "-36px", marginTop: "5px" }}
 			>
 				{questionNum}
-				<LuArrowRight className="mb-[-3px]" width={16} height={16} />
-				{/* <Image
-					src="./right-arrow.svg"
-					alt="right arrow"
-					width={16}
-					height={16}
-					className="mb-[-3px]" // Tailwind doesn't support negative margin bottom directly in the class name
-				/> */}
+				<LuArrowRight width={16} height={16} />
+				{/* <LuArrowRight className="mb-[-3px]" width={16} height={16} /> */}
 			</span>
 			{children}
 		</QuestionBoxHeading>
@@ -99,7 +93,7 @@ const QuestionInputText = forwardRef(
 				ref={passedRef}
 				className={classNames(
 					"bg-transparent border-none border-b border-placeholder-color text-btn-text-color text-6xl mt-9 pb-2 w-full focus:border-b-2 focus:border-btn-text-color focus:outline-none",
-					questrialFont.className,
+					// questrialFont.className,
 					className
 				)}
 				type={type ?? "text"}

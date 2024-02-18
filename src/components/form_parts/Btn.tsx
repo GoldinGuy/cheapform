@@ -1,18 +1,18 @@
 import classNames from "classnames";
 import { MouseEventHandler, ReactNode, useEffect, useState } from "react";
-import { questrialFont } from "../../utils/questrial";
+import { LuCheck } from "react-icons/lu";
 
 type BtnContainerProps = {
 	readonly children: ReactNode;
-	readonly showPressEnter: boolean;
 	readonly className?: string;
 	readonly onClick?: MouseEventHandler;
+	readonly showEnter?: boolean;
 };
 
 export function BtnContainer({
 	children,
-	showPressEnter,
 	className,
+	showEnter,
 	onClick,
 }: BtnContainerProps) {
 	const [isOnMobile, setIsOnMobile] = useState(false);
@@ -41,12 +41,14 @@ export function BtnContainer({
 		>
 			<button
 				onClick={onClick}
-				className={`${questrialFont.className} bg-primary-color border border-transparent rounded text-btn-text-color cursor-pointer text-2xl font-bold py-2.5 px-3.5 hover:bg-primary-light-color active:bg-primary-dark-color focus:outline-none`}
+				className={`bg-teal-500 border border-transparent rounded text-btn-text-color cursor-pointer text-2xl font-bold py-2.5 px-4 hover:bg-primary-light-color active:bg-teal-700 focus:outline-none flex justify-between items-center`}
 			>
 				{children}
+				<LuCheck className="ml-2" />
+				{/* <span className="ml-3">↵</span> */}
 			</button>
-			{isOnMobile || !showPressEnter || (
-				<span className="text-btn-text-color text-lg md:text-xl">
+			{isOnMobile || !showEnter || (
+				<span className="text-btn-text-color text-sm md:text-md">
 					press{" "}
 					<strong className="font-extrabold tracking-wide">Enter ↵</strong>
 				</span>

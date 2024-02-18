@@ -1,12 +1,13 @@
+"use client";
+
 import Image from "next/image";
 import { useQuestions } from "../../utils/questions_context";
-import { questrialFont } from "../../utils/questrial";
-import { ProgressBar } from "../../components/ProgressBar";
+import { ProgressBar } from "../components/ProgressBar";
 import { SharedStatesProvider } from "../../utils/shared_state";
+import { CheapForm } from "../components/Form";
 
 export default function Form() {
 	const { percentComplete } = useQuestions();
-
 	return (
 		<>
 			<header className="fixed top-0 left-0 right-0 overflow-hidden">
@@ -20,10 +21,10 @@ export default function Form() {
 				/>
 			</header>
 			<main
-				className={`flex flex-col items-center justify-center min-h-screen min-w-full antialiased ${questrialFont.className}`}
+				className={`flex flex-col items-center justify-center min-h-screen min-w-full antialiased font-sans`}
 			>
 				<SharedStatesProvider>
-					<div>TBD</div>
+					<CheapForm />
 				</SharedStatesProvider>
 			</main>
 		</>
