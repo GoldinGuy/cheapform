@@ -1,36 +1,90 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# CheapForm
 
-## Getting Started
+Welcome to CheapForm, a cost-effective alternative to Typeform that is currently offered for free. CheapForm is designed for users who prefer a direct and straightforward approach to form creation and customization. By editing a JSON file, users can effortlessly design forms that cater to their specific needs. CheapForm natively supports five types of input: `firstName`, `lastName`, `email`, `multiselect`, and `select`, with plans to introduce support for standard text input soon.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Cost-Effective**: CheapForm is a free tool, making it accessible to users with budget constraints.
+- **Easy Customization**: Users can directly edit a JSON file to create and customize forms, allowing for quick and easy modifications.
+- **Support for Multiple Input Types**: CheapForm currently supports five input types, ensuring flexibility in form design.
+
+## Supported Input Types
+
+1. **firstName**: Collects the user's first name.
+2. **lastName**: Collects the user's last name.
+3. **email**: Collects the user's email address.
+4. **select**: Allows the user to choose one option from a list.
+5. **multiselect**: Allows the user to choose multiple options from a list.
+
+## Coming Soon
+
+- **Standard Text Input**: We are working on introducing support for standard text input, which will allow users to collect open-ended responses from form respondents.
+
+## How to Fill in the JSON
+
+To create or customize a form in CheapForm, you will need to edit the JSON file directly. Here's a step-by-step guide to help you get started:
+
+### Step 1: Define the Total Number of Questions
+
+Start by specifying the total number of questions in your form using the `total_questions` key.
+
+```json
+{
+	"total_questions": 5
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Step 2: List Your Questions
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Under the `questions` key, list each question as a separate object within the array. For each question, you must specify the `question` text, `type` of input, and whether the question is `required`.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+#### Example for `firstName`, `lastName`, and `email`:
 
-## Learn More
+```json
+{
+	"question": "First name",
+	"type": "firstName",
+	"required": true
+}
+```
 
-To learn more about Next.js, take a look at the following resources:
+#### Example for `select`:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```json
+{
+	"question": "What material is at the core of your wand?",
+	"type": "select",
+	"answers": {
+		"A": "Phoenix Feather",
+		"B": "Dragon Heartstring",
+		"C": "Unicorn Hair"
+	},
+	"required": true
+}
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+#### Example for `multiselect`:
 
-## Deploy on Vercel
+```json
+{
+  "question": "Which of your skills are you most proud of?",
+  "type": "multiselect",
+  "answers": {
+    "A": "Intelligence",
+    ...
+  },
+  "required": true
+}
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Step 3: Save Your JSON File
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+After adding all your questions, save your JSON file. The form defined in this file is now ready to be used with CheapForm.
+
+## Conclusion
+
+CheapForm offers a simple yet effective solution for creating customizable forms. By directly editing a JSON file, users can design forms that meet their specific requirements without the need for complex software. With support for various input types and more features on the way, CheapForm is a versatile tool for anyone looking to collect information efficiently and cost-effectively.
+
+---
+
+Run `yarn dev` to start development.
