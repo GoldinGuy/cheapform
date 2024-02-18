@@ -72,6 +72,42 @@ const FORM_CONFIG: formConfig = {
 			},
 			required: true,
 		},
+		{
+			question:
+				"A skilled opponent fires an unknown spell at you; you shout...",
+			type: "select",
+			answers: {
+				A: "Expelliarmus!",
+				B: "Protego!",
+				C: "Stupefy!",
+				D: "Crucio!",
+			},
+			required: true,
+		},
+		{
+			question:
+				"A skilled opponent fires an unknown spell at you; you shout...",
+			type: "select",
+			answers: {
+				A: "Expelliarmus!",
+				B: "Protego!",
+				C: "Stupefy!",
+				D: "Crucio!",
+			},
+			required: true,
+		},
+		{
+			question:
+				"A skilled opponent fires an unknown spell at you; you shout...",
+			type: "select",
+			answers: {
+				A: "Expelliarmus!",
+				B: "Protego!",
+				C: "Stupefy!",
+				D: "Crucio!",
+			},
+			required: true,
+		},
 	],
 };
 export default FORM_CONFIG;
