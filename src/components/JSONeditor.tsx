@@ -9,7 +9,6 @@ import {
 	LuTrash,
 } from "react-icons/lu";
 import { formConfig } from "../../types/typings";
-import defaultConfig from "../../utils/config";
 
 export default function JSONEditor({
 	config,
@@ -20,6 +19,10 @@ export default function JSONEditor({
 }) {
 	const [showEditor, setShowEditor] = useState(false);
 	const [configText, setConfigText] = useState(JSON.stringify(config, null, 2));
+
+	const handleTextChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+		setConfigText(event.target.value);
+	};
 
 	return (
 		<>
@@ -49,6 +52,7 @@ export default function JSONEditor({
 							<pre className="font-mono text-sm w-full ">
 								<textarea
 									value={configText}
+									onChange={handleTextChange} // Add the onChange event handler
 									className="items-start border flex md:w-full flex-col min-h-screen z-30 bg-gray-100/40 border-gray-200 shadow-sm px-4 overflow-y-scroll dark:bg-gray-800/40 dark:border-gray-800 w-screen sm:w-96"
 								/>
 							</pre>

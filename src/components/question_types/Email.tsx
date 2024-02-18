@@ -40,7 +40,7 @@ export function Email({ num, q }: { num: number; q: QuestionType }) {
 
 			<QuestionInputText
 				type="email"
-				placeholder="kyler.wang@treehacks.com"
+				placeholder="harry.potter@hogwarts.edu"
 				value={email}
 				onChange={handleInputChange}
 			/>

@@ -36,7 +36,7 @@ export function FirstName({ num, q }: { num: number; q: QuestionType }) {
 			</QuestionNumHeading>
 
 			<QuestionInputText
-				placeholder="Kyler..."
+				placeholder="Harry..."
 				value={firstName}
 				onChange={handleInputChange}
 			/>
