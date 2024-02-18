@@ -9,8 +9,9 @@ import {
 	QuestionInputText,
 } from "../form_parts/QuestionParts";
 import { Error } from "../Error";
+import { QuestionType } from "../../../types/typings";
 
-export function LastName() {
+export function LastName({ num, q }: { num: number; q: QuestionType }) {
 	const { errorMsg: error, setErrorMsg, handleOkClick } = useSharedStates();
 	const { state, dispatch } = useQuestions();
 
@@ -31,7 +32,7 @@ export function LastName() {
 	return (
 		<>
 			<QuestionNumHeading questionNum={2}>
-				Thanks, {firstName}. What&apos;s your last name?
+				Thanks, {firstName}. What&apos;s your last name? {q.required && "*"}
 			</QuestionNumHeading>
 
 			<QuestionInputText

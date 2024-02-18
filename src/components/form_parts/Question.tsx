@@ -7,14 +7,18 @@ import { LuCheckCircle, LuCheckCircle2 } from "react-icons/lu";
 import { FirstName } from "../question_types/FirstName";
 import { LastName } from "../question_types/LastName";
 import { Email } from "../question_types/Email";
+import { Select } from "../question_types/Select";
+import { Multiselect } from "../question_types/MultiSelect";
 
 export function Question({
+	num,
 	inView,
 	inViewSlide,
 	outView,
 	outViewSlide,
 	isRendered,
 	type,
+	questionData,
 }: QuestionProps) {
 	return (
 		<div
@@ -28,19 +32,17 @@ export function Question({
 				rendered: isRendered,
 			})}
 		>
-			{type === "intro" && <Intro />}
-			{type === "firstName" && <FirstName />}
-			{type === "lastName" && <LastName />}
-			{type === "email" && <Email />}
-			{/*{type === "industry" && <IndustryInput />}
-			{type === "role" && <RoleInput />}
-			{type === "goal" && <GoalInput />}
-			 */}
+			{type === "intro" && <Intro num={num} />}
+			{type === "firstName" && <FirstName num={num} q={questionData} />}
+			{type === "lastName" && <LastName num={num} q={questionData} />}
+			{type === "email" && <Email num={num} q={questionData} />}
+			{type === "select" && <Select num={num} q={questionData} />}
+			{type === "multiselect" && <Multiselect num={num} q={questionData} />}
 		</div>
 	);
 }
 
-export function Intro() {
+export function Intro({ num }: { num: number }) {
 	const { handleOkClick } = useSharedStates();
 
 	return (

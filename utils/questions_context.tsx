@@ -8,7 +8,7 @@ import {
 } from "react";
 import { QuestionsContextType } from "../types/typings";
 import { questionsInitialState, questionsReducerFunc } from "../reducers";
-import config from "./config.json";
+import config from "./config";
 
 const QuestionsContext = createContext<QuestionsContextType>({
 	state: questionsInitialState,

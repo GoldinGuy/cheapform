@@ -10,8 +10,9 @@ import {
 	QuestionInputText,
 } from "../form_parts/QuestionParts";
 import { Error } from "../Error";
+import { QuestionType } from "../../../types/typings";
 
-export function Email() {
+export function Email({ num, q }: { num: number; q: QuestionType }) {
 	const { errorMsg: error, setErrorMsg, handleOkClick } = useSharedStates();
 	const { state, dispatch } = useQuestions();
 
@@ -31,7 +32,9 @@ export function Email() {
 
 	return (
 		<>
-			<QuestionNumHeading questionNum={3}>Your email?</QuestionNumHeading>
+			<QuestionNumHeading questionNum={3}>
+				Your email? {q.required && "*"}
+			</QuestionNumHeading>
 
 			<QuestionParagraph>We promise to spam your inbox.</QuestionParagraph>
 

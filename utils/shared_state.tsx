@@ -1,12 +1,18 @@
 "use client";
 
-import { createContext, ReactNode, useContext, useState } from "react";
+import {
+	createContext,
+	ReactNode,
+	useContext,
+	useEffect,
+	useState,
+} from "react";
 import {
 	SharedStatesContextType,
 	QuestionNumType,
 	ObjectType,
 } from "../types/typings";
-import config from "./config.json";
+import config from "./config";
 
 const SharedStatesContext = createContext<SharedStatesContextType>({
 	questionNum: { prev: null, now: 0 },
@@ -17,6 +23,7 @@ const SharedStatesContext = createContext<SharedStatesContextType>({
 	setShowIndustriesList: () => {},
 	handleQuestionNumUpdate: () => {},
 	handleOkClick: () => {},
+	activeQ: config.questions[0],
 });
 
 type SharedStatesProviderType = {
@@ -31,6 +38,11 @@ export function SharedStatesProvider({ children }: SharedStatesProviderType) {
 
 	const [errorMsg, setErrorMsg] = useState<ObjectType>({});
 	const [showIndustriesList, setShowIndustriesList] = useState(false);
+	const [activeQ, setActiveQ] = useState(config.questions[0]);
+
+	useEffect(() => {
+		setActiveQ(config.questions[questionNum.now]);
+	}, [questionNum.now]);
 
 	function handleQuestionNumUpdate() {
 		setQuestionNum((prevValue) =>
@@ -57,6 +69,8 @@ export function SharedStatesProvider({ children }: SharedStatesProviderType) {
 		setShowIndustriesList,
 		handleQuestionNumUpdate,
 		handleOkClick,
+		activeQ,
+		// nextQ: config.questions[questionNum.now + 1],
 	};
 
 	return (

@@ -89,7 +89,7 @@ const QuestionInputText = forwardRef(
 			<input
 				ref={passedRef}
 				className={classNames(
-					"bg-transparent border-none border-b border-placeholder-color text-btn-text-color text-6xl mt-9 pb-2 w-full focus:border-b-2 focus:border-btn-text-color focus:outline-none",
+					"bg-transparent border-none border-b border-placeholder-color text-btn-text-color text-6xl mt-9 pb-2 w-full focus:border-b-2 focus:border-btn-text-color focus:outline-none ",
 					// questrialFont.className,
 					className
 				)}
